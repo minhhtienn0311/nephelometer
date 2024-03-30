@@ -1,51 +1,80 @@
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+}
+
 body {
-    font-family: "Madimi One", sans-serif;
-  }
-  
-  nav {
-    font-size: 50;
-    width: 100%;
-    color: gray;
-    height: auto;
-    overflow: hidden;
-    background-color: white;
-  }
-  
-  nav ul li {
-    margin: 0px 15px;
-    padding: 5px 125px;
-    float: left;
-    display: block;
-  }
-  
-  nav li,
-  nav li a {
-    text-decoration: none;
-    color: gray;
-    list-style: none;
-  }
-  
-  nav li :hover {
-    background-color: gray;
-  }
-  
-  nav li a:hover {
-    color: whitesmoke;
-  }
-  
-  nav ul {
-    margin: 0 auto;
-  }
-  main {
-    margin: 0 150px;
-  }
-  
-  label {
-      text-align: center;
-      color: #69f7ff;
-  }
-  
-  #home {
-      text-align: center;
-      margin: 0 100px;
-  }
+  font-family: "Madimi One", sans-serif;
+}
+
+.sidebar {
+  position: fixed;
+  left: -250px;
+  width: 250px;
+  height: 100%;
+  background: black;
+  transition: all .5s ease;
+}
+
+.sidebar header {
+  font-size: 27px;
+  color: white;
+  text-align: center;
+  line-height: 70px;
+  background: black;
+  user-select: none;
+}
+.sidebar ul a {
+  display: block;
+  height: 100%;
+  width: 100%;
+  line-height: 65px;
+  font-size: 20px;
+  color: white;
+  padding-left: 40px;
+  box-sizing: border-box;
+  border-top: 1px solid rbga(255,255,255, .1);
+  border-bottom: 1px solid black;
+  transition: .4s;
+}
+
+ul li:hover a {
+  padding-left: 50px;
+}
+
+.sidebar ul a i {
+  margin-right: 16px;
+}
+
+#check {
+  display: none;
+}
+
+label #btn, label #cancel {
+  position: absolute;
+  cursor: pointer;
+  background: #042331;
+  border-radius: 3px;
+}
+
+label #btn {
+  left: 40px;
+  top: 20px;
+  font-size: 35px;
+  color: white;
+}
+
+label #cancel {
+  z-index: 1111;
+  left: 195px;
+  top: 17px;
+  font-size: 30px;
+  color: #0a5275;
+  padding: 4px 9px;
+}
+
+#check:checked ~ .sidebar {
+  left: 0;
+}
