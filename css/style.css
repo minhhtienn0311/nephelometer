@@ -1,0 +1,51 @@
+body {
+    font-family: "Madimi One", sans-serif;
+  }
+  
+  nav {
+    font-size: 50;
+    width: 100%;
+    color: gray;
+    height: auto;
+    overflow: hidden;
+    background-color: white;
+  }
+  
+  nav ul li {
+    margin: 0px 15px;
+    padding: 5px 125px;
+    float: left;
+    display: block;
+  }
+  
+  nav li,
+  nav li a {
+    text-decoration: none;
+    color: gray;
+    list-style: none;
+  }
+  
+  nav li :hover {
+    background-color: gray;
+  }
+  
+  nav li a:hover {
+    color: whitesmoke;
+  }
+  
+  nav ul {
+    margin: 0 auto;
+  }
+  main {
+    margin: 0 150px;
+  }
+  
+  label {
+      text-align: center;
+      color: #69f7ff;
+  }
+  
+  #home {
+      text-align: center;
+      margin: 0 100px;
+  }
