@@ -33,7 +33,6 @@ function signup(e) {
     return;
   }
 }
-
 function login(e) {
   // chan luong mac dinh
   e.preventDefault();
