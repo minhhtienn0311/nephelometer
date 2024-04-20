@@ -84,3 +84,14 @@ document.getElementById("login_btn").addEventListener("click", (e) => {
 document.getElementById("signup_btn").addEventListener("click", (e) => {
   signup(e);
 });
+
+function set_text_for_nav(text) {
+  username_nav.innerHTML = text;
+}
+
+if (!JSON.parse(localStorage.getItem("current_user"))) {
+  set_text_for_nav("Login");
+} else {
+  const username = JSON.parse(localStorage.getItem("current_user"))
+  set_text_for_nav(username);
+}

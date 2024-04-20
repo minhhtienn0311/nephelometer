@@ -419,10 +419,6 @@ nav {
   }
 }
 
-.hidden {
-  display: none;
-}
-
 .wrapper-p {
   width: 100%;
   display: flex;
@@ -445,7 +441,7 @@ nav {
   color: var(--primary-color);
   overflow: hidden;
   transform: scale(0);
-  transition: transform .5s ease,height .2s ease;
+  transition: transform .5s ease, height .2s ease;
 }
 
 .wrapper.active-popup {
