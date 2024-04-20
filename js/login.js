@@ -3,6 +3,10 @@ const user_list = [
   { username: "tienle", email: "tien@gmail.com", pass: "123" },
 ];
 
+// const wrapper = document.querySelector(".wrapper");
+// hien thi ten nguoi dung hoac chu login khi chua dang nhap
+const username_nav = document.querySelector("#username_nav");
+
 // add du lieu mau vao local storage
 if (!JSON.parse(localStorage.getItem("user_list"))) {
   localStorage.setItem("user_list", JSON.stringify(user_list));
@@ -30,6 +34,8 @@ function signup(e) {
       JSON.stringify({ username: username, email: email, pass: pass })
     );
     alert("Dang ky thanh cong");
+    set_text_for_nav(username);
+    wrapper.classList.remove("active-popup");
     return;
   }
 }
@@ -58,11 +64,15 @@ function login(e) {
             JSON.stringify(new_user_list[index])
           );
           alert("Dang nhap thanh cong");
-
+          const username = JSON.parse(
+            localStorage.getItem("current_user")
+          ).username;
+          set_text_for_nav(username);
+          wrapper.classList.remove("active-popup");
           return;
         }
       }
-    }
+    } 
 
     // truong hop chua sign up
     if (!JSON.parse(localStorage.getItem("current_user"))) {
@@ -71,10 +81,6 @@ function login(e) {
   }
 }
 
-function logout() {
-  // xoa du lieu current_user
-  localStorage.removeItem("current_user");
-}
 // bat su kien cho nut login
 document.getElementById("login_btn").addEventListener("click", (e) => {
   login(e);
@@ -85,13 +91,14 @@ document.getElementById("signup_btn").addEventListener("click", (e) => {
   signup(e);
 });
 
+// Chinh gia tri cua nut bam login tren nav
 function set_text_for_nav(text) {
   username_nav.innerHTML = text;
 }
-
+// kiem tra da login chua (ngay khi mo web)
 if (!JSON.parse(localStorage.getItem("current_user"))) {
   set_text_for_nav("Login");
 } else {
-  const username = JSON.parse(localStorage.getItem("current_user"))
+  const username = JSON.parse(localStorage.getItem("current_user")).username;
   set_text_for_nav(username);
 }
